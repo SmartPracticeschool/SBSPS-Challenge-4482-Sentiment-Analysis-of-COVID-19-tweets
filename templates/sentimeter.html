@@ -1,0 +1,278 @@
+{% extends 'main.html' %}
+{% block head %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sentimeter - A Visualization Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/newstyle.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/component1.css" />
+    <script src="../static/js/modernizr-2.6.2.min.js"></script>
+    
+
+</head>
+<style type="text/css">
+    .card {
+        padding-right: 100px;
+    } 
+
+    .column {
+        opacity: 1;
+        padding: 0px 30px 70px 30px;
+        border-radius: 5px;
+        /*   background-color:  rgba(255, 7, 58, 0.125);  */
+        transform: translateX(0px);
+        height: 8rem;
+        cursor: pointer;
+        transition: background .15s ease-in-out;
+        display: block;
+        text-align: center;
+        float: right;
+
+
+    }
+
+    /* Style the counter cards */
+
+    .red:hover {
+        background-color: rgba(255, 7, 58, 0.125);
+    }
+
+    .green:hover {
+        background-color: rgba(0, 255, 0, 0.125);
+    }
+
+    .blue {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .state {
+        color: #E23028;
+        font-size: 24px;
+        font-family: "archia";
+        background: rgba(226, 48, 40, .0627451);
+        padding: .25rem;
+        border-radius: 5px;
+        display: inline-flex;
+        margin-right: 500px;
+    }
+    .paral h1 {
+            color: rgba(255, 255, 255, 0.726);
+            font-size: 60px;
+            font-family: impact;
+            text-align: center;
+            padding-top: 60px;
+            line-height: 100px;
+        }
+
+        .paral {
+            height: 350px;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        .paralsec {
+            background-image: url('https://mycanyonlake-rochen.netdna-ssl.com/wp-content/uploads/2020/07/COVID-1.jpg');
+        }
+
+        .info {
+            padding: 6px 8px;
+            text-align: center;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .info h3 {
+            color: #777;
+            font-weight: bold;
+            font-size: medium;
+        }
+
+        .legend {
+            text-align: left;
+            line-height: 18px;
+            color: #555;
+        }
+
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+
+        .atext {
+            background: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            min-width: 30px;
+        }
+        #grad1 {
+  height: 200px;
+  background-color: aqua; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, aqua , rgb(23, 200, 253)); /* Standard syntax (must be last) */
+}
+</style>
+
+<body>
+    
+    {% endblock %}
+    {% block all %}
+    <div class="jumbotron paral paralsec">
+        <h1>Sentimeter – Dashboard For Visualization</h1>
+    </div>
+    <br><br><br><br>
+    <br>
+    <br>
+<h1 align="center">How do people react 😃😡😕 ?</h2>
+        <div class="row">
+            <br>
+            <div class="card">
+                <div class="column red">
+                    <h3
+                        style="color: red; text-align: center; font-family: 'Walter Turncoat', cursive;font-size: small;">
+                        Negative
+                    </h3>
+                    <br>
+                    <i class="fa fa-twitter" style="color: red;"></i>
+                    <br>
+                    <br>
+                    <br>
+                    <p style="font-family: 'Julius Sans One', sans-serif; font-size: 30px; color: red;">
+                        <strong>{{ls1[14]}}</strong>
+                    </p>
+                </div>
+                <div class="column blue">
+                    <h3
+                        style="color: blue; text-align: center;font-family: 'Walter Turncoat', cursive;font-size: small;">
+                        Neutral
+                    </h3>
+                    <br>
+                    <i class="fa fa-twitter" style="color: blue;"></i>
+                    <br>
+                    <br>
+                    <br>
+                    <p style="font-family: 'Julius Sans One' ; font-size: 30px; color: blue;">
+                        <strong>{{ls1[15]}}</strong></p>
+                </div>
+                <div class="column green">
+                    <h3
+                        style="color: green; text-align: center;font-family: 'Walter Turncoat', cursive;font-size: small;">
+                        Positive
+                    </h3>
+                    <br>
+                    <i class="fa fa-twitter" style="color: green;"></i>
+                    <br>
+                    <br>
+                    <br>
+                    <p style="font-family:  'Julius Sans One', sans-serif; font-size: 30px; color: green;">
+                        <strong>{{ls1[13]}}</strong></p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div>
+                {{ls1[3] | safe}}
+            </div>
+        </div>
+    </div>
+    <br>
+<br>
+<br>
+<br>
+<br>
+
+<img src="https://camo.githubusercontent.com/47bb79a282d1465f6b45908b8c26977bbbbdc73f/68747470733a2f2f63646e2e706978616261792e636f6d2f70686f746f2f323031332f30362f30372f30392f35332f747769747465722d3131373539355f5f3334302e706e67">
+        <div>
+            <h2 align="center">Recent Tweets Sentiments</h2>
+            <br>
+            <br>
+            <br>
+            <table class="table">
+                <tr>
+                    <th>Date</th>
+                    <th>Recent Tweet</th>
+                    <th>Sentiment Score</th>
+                </tr>
+                <tr>
+                    <td>{{var[0][0]}}</td>
+                    <td>{{var[1][0]}}</td>
+                    <td>{{var[2][0]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][1]}}</td>
+                    <td>{{var[1][1]}}</td>
+                    <td>{{var[2][1]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][2]}}</td>
+                    <td>{{var[1][2]}}</td>
+                    <td>{{var[2][2]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][3]}}</td>
+                    <td>{{var[1][3]}}</td>
+                    <td>{{var[2][3]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][4]}}</td>
+                    <td>{{var[1][4]}}</td>
+                    <td>{{var[2][4]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][5]}}</td>
+                    <td>{{var[1][5]}}</td>
+                    <td>{{var[2][5]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][6]}}</td>
+                    <td>{{var[1][6]}}</td>
+                    <td>{{var[2][6]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][7]}}</td>
+                    <td>{{var[1][7]}}</td>
+                    <td>{{var[2][7]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][8]}}</td>
+                    <td>{{var[1][8]}}</td>
+                    <td>{{var[2][8]}}</td>
+                </tr>
+                <tr>
+                    <td>{{var[0][9]}}</td>
+                    <td>{{var[1][9]}}</td>
+                    <td>{{var[2][9]}}</td>
+                </tr>
+
+            </table>
+        </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    </body>
+        {% endblock %}
