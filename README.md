@@ -14,3 +14,5 @@ The proposed solution will be able to analyse the public sentiment towards Covid
 ### For viewing the application
 
 Click [here](https://eu-gb.dataplatform.cloud.ibm.com/dashboards/a17301ec-ae25-4a34-8931-56a059711f31?project_id=ae845199-0726-45bd-8087-ed7b30f87ce2&context=wdp&mode=authoring)
+
+Youtube Link - https://www.youtube.com/watch?v=B1H2EZrMSrg
